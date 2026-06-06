@@ -4,7 +4,9 @@ function Home() {
 
 
   return (
-    <></>
+    <div
+      className="min-h-screen w-full text-white overflow-x-hidden"
+    ></div>
   );
 }
 
