@@ -23,7 +23,7 @@ const Navbar = () => {
                         </svg>
                     </div>
                     <span className="font-sans font-extrabold text-[#0b2545] tracking-wide text-xs sm:text-sm md:text-base lg:text-lg uppercase">
-                        Magnus Chess Academy Chennai
+                        Chess Academy Chennai
                     </span>
                 </Link>
 
@@ -50,13 +50,7 @@ const Navbar = () => {
                         About Us
                     </Link>
                     
-                    {/* Enroll Now button */}
-                    <Link
-                        to="/enroll"
-                        className="bg-gradient-to-r from-sky-50 to-sky-100 hover:from-sky-100 hover:to-sky-200 border border-sky-300 text-sky-950 font-bold text-xs md:text-sm uppercase tracking-wider rounded-full px-6 py-2.5 transition-all duration-200 hover:shadow-sm"
-                    >
-                        Enroll Now
-                    </Link>
+                    
                 </div>
 
                 {/* Mobile Menu Toggle Button */}

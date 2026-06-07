@@ -1092,7 +1092,7 @@ const Home = () => {
                   value={formData.name} 
                   onChange={handleInputChange}
                   required 
-                  placeholder="e.g. Magnus Carlsen"
+                  placeholder="e.g. Venkatesh"
                   className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all duration-300"
                 />
               </div>
@@ -1119,7 +1119,7 @@ const Home = () => {
                   name="email" 
                   value={formData.email} 
                   onChange={handleInputChange}
-                  placeholder="e.g. magnus@chess.com"
+                  placeholder="e.g. chess@chess.com"
                   className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all duration-300"
                 />
               </div>
