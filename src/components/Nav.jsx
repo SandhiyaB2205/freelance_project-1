@@ -23,7 +23,7 @@ const Navbar = () => {
                         </svg>
                     </div>
                     <span className="font-sans font-extrabold text-[#0b2545] tracking-wide text-xs sm:text-sm md:text-base lg:text-lg uppercase">
-                        Chess Academy 
+                        Magnus Chess Academy Chennai
                     </span>
                 </Link>
 
