@@ -11,7 +11,7 @@ function App() {
         <Router>
             <div className="flex flex-col min-h-screen bg-bg-dark text-text-main">
                 <Navbar />
-                <main className="flex-grow w-full max-w-7xl mx-auto px-6 py-12">
+                <main className="flex-grow flex flex-col w-full">
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/about" element={<About />} />
