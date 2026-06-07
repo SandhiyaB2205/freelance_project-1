@@ -312,239 +312,248 @@ const Home = () => {
         </section>
       </section>
       {/* WHY CHOOSE US SECTION */}
-      <section className="relative w-full bg-[#fdfbf0] py-28 px-6 md:px-12 lg:px-20 overflow-hidden">
+     <section className="relative w-full bg-[#fdfbf0] py-28 px-6 md:px-12 lg:px-20 overflow-hidden">
 
-        {/* Background Effects */}
-        <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-yellow-200/20 blur-3xl rounded-full -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-yellow-300/20 blur-3xl rounded-full translate-x-1/3 translate-y-1/3" />
+  {/* Background Effects */}
+  <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-yellow-200/20 blur-3xl rounded-full -translate-x-1/2 -translate-y-1/2" />
+  <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-yellow-300/20 blur-3xl rounded-full translate-x-1/3 translate-y-1/3" />
 
-        {/* Heading */}
-        <div className="relative max-w-7xl mx-auto text-center mb-24 z-10">
+  {/* Heading */}
+  <div className="relative max-w-7xl mx-auto text-center mb-24 z-10">
 
-          <span className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-yellow-300 bg-yellow-100/80 backdrop-blur-xl text-yellow-700 text-xs tracking-[4px] uppercase font-bold shadow-md">
-            ♟ Why Choose Us
+    <span className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-yellow-300 bg-yellow-100/80 backdrop-blur-xl text-yellow-700 text-xs tracking-[4px] uppercase font-bold shadow-md">
+      ♟ Why Choose Us
+    </span>
+
+    <h2 className="mt-7 text-4xl md:text-6xl lg:text-7xl font-black text-slate-900 leading-[1.05] tracking-tight">
+      Master The Art Of
+      <br />
+      <span className="bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+        Strategic Thinking
+      </span>
+    </h2>
+
+    <p className="mt-8 max-w-3xl mx-auto text-slate-600 text-lg md:text-xl leading-9 font-medium">
+      Experience premium chess coaching that transforms beginners into
+      confident players and competitors into future champions.
+    </p>
+  </div>
+
+  {/* Cards */}
+  <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 z-10">
+
+    {/* CARD 1 */}
+    <div
+      onClick={() => setActiveCard(0)}
+      className={`group relative cursor-pointer transition-all duration-700 hover:-translate-y-5 ${
+        activeCard === 0 ? "scale-[1.03]" : ""
+      }`}
+    >
+
+      {/* Gradient Border */}
+      <div
+        className={`absolute inset-0 rounded-[34px] p-[1.5px] transition-all duration-700 ${
+          activeCard === 0
+            ? "bg-gradient-to-br from-yellow-300 via-yellow-500 to-yellow-600 shadow-[0_0_60px_rgba(234,179,8,0.35)]"
+            : "bg-white/15 group-hover:bg-gradient-to-br group-hover:from-yellow-300/70 group-hover:to-yellow-500/70"
+        }`}
+      />
+
+      {/* Main Card */}
+      <div className="relative h-full rounded-[34px] bg-black border border-white/15 p-10 overflow-hidden">
+
+        {/* Shine Effect */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 -left-[120%] h-full w-[80%] bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-25deg] group-hover:left-[140%] transition-all duration-1000" />
+        </div>
+
+        {/* Glow */}
+        <div className="absolute -top-20 -right-20 w-64 h-64 bg-yellow-400/10 rounded-full blur-3xl group-hover:scale-150 transition duration-700" />
+
+        {/* Floating Dots */}
+        <div className="absolute top-6 right-6 w-3 h-3 bg-yellow-300 rounded-full animate-ping" />
+        <div className="absolute bottom-8 left-8 w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
+
+        {/* Icon */}
+        <div className="relative w-24 h-24 rounded-[28px] bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center text-5xl text-yellow-300 mb-10 shadow-[0_0_40px_rgba(250,204,21,0.2)] group-hover:rotate-12 group-hover:scale-110 transition-all duration-700">
+
+          {/* Rotating Border */}
+          <div className="absolute inset-0 rounded-[28px] border border-yellow-400/30 animate-spin [animation-duration:8s]" />
+
+          ♛
+        </div>
+
+        {/* Title */}
+        <h3 className="text-3xl font-black text-white mb-5 tracking-tight group-hover:text-yellow-300 transition duration-500">
+          Elite Training
+        </h3>
+
+        {/* Description */}
+        <p className="leading-8 text-[15px] text-gray-400 group-hover:text-gray-300 transition duration-500">
+          Advanced coaching sessions crafted to improve tactical
+          awareness, positional understanding, opening preparation,
+          and competitive confidence.
+        </p>
+
+        {/* Button */}
+        <div className="mt-10 inline-flex items-center gap-3 text-yellow-300 font-semibold tracking-wide">
+          Learn More
+          <span className="group-hover:translate-x-2 transition duration-500">
+            →
           </span>
-
-          <h2 className="mt-7 text-4xl md:text-6xl lg:text-7xl font-black text-slate-900 leading-[1.05] tracking-tight">
-            Master The Art Of
-            <br />
-            <span className="bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-600 bg-clip-text text-transparent">
-              Strategic Thinking
-            </span>
-          </h2>
-
-          <p className="mt-8 max-w-3xl mx-auto text-slate-600 text-lg md:text-xl leading-9 font-medium">
-            Experience premium chess coaching that transforms beginners into
-            confident players and competitors into future champions.
-          </p>
         </div>
 
-        {/* Cards */}
-        <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 z-10">
+        {/* Bottom Line */}
+        <div
+          className={`absolute bottom-0 left-0 h-[4px] bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-full transition-all duration-700 ${
+            activeCard === 0 ? "w-full" : "w-0 group-hover:w-full"
+          }`}
+        />
+      </div>
+    </div>
 
-          {/* CARD 1 */}
-          <div
-            onClick={() => setActiveCard(0)}
-            className={`group relative cursor-pointer transition-all duration-700 hover:-translate-y-5 ${activeCard === 0 ? "scale-[1.03]" : ""
-              }`}
-          >
+    {/* CARD 2 */}
+    <div
+      onClick={() => setActiveCard(1)}
+      className={`group relative cursor-pointer transition-all duration-700 hover:-translate-y-5 ${
+        activeCard === 1 ? "scale-[1.03]" : ""
+      }`}
+    >
 
-            {/* Gradient Border */}
-            <div
-              className={`absolute inset-0 rounded-[34px] p-[1.5px] transition-all duration-700 ${activeCard === 0
-                  ? "bg-gradient-to-br from-yellow-300 via-yellow-500 to-yellow-600 shadow-[0_0_60px_rgba(234,179,8,0.35)]"
-                  : "bg-black/10 group-hover:bg-gradient-to-br group-hover:from-yellow-300/70 group-hover:to-yellow-500/70"
-                }`}
-            />
+      {/* Gradient Border */}
+      <div
+        className={`absolute inset-0 rounded-[34px] p-[1.5px] transition-all duration-700 ${
+          activeCard === 1
+            ? "bg-gradient-to-br from-yellow-300 via-yellow-500 to-yellow-600 shadow-[0_0_60px_rgba(234,179,8,0.35)]"
+            : "bg-black/20 group-hover:bg-gradient-to-br group-hover:from-yellow-300/70 group-hover:to-yellow-500/70"
+        }`}
+      />
 
-            {/* Main Card */}
-            <div className="relative h-full rounded-[34px] bg-black p-10 overflow-hidden">
+      {/* Main Card */}
+      <div className="relative h-full rounded-[34px] bg-white border border-black/20 p-10 overflow-hidden">
 
-              {/* Shine Effect */}
-              <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-0 -left-[120%] h-full w-[80%] bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-25deg] group-hover:left-[140%] transition-all duration-1000" />
-              </div>
-
-              {/* Glow */}
-              <div className="absolute -top-20 -right-20 w-64 h-64 bg-yellow-400/10 rounded-full blur-3xl group-hover:scale-150 transition duration-700" />
-
-              {/* Floating Dots */}
-              <div className="absolute top-6 right-6 w-3 h-3 bg-yellow-300 rounded-full animate-ping" />
-              <div className="absolute bottom-8 left-8 w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
-
-              {/* Icon */}
-              <div className="relative w-24 h-24 rounded-[28px] bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center text-5xl text-yellow-300 mb-10 shadow-[0_0_40px_rgba(250,204,21,0.2)] group-hover:rotate-12 group-hover:scale-110 transition-all duration-700">
-
-                {/* Rotating Border */}
-                <div className="absolute inset-0 rounded-[28px] border border-yellow-400/30 animate-spin [animation-duration:8s]" />
-
-                ♛
-              </div>
-
-              {/* Title */}
-              <h3 className="text-3xl font-black text-white mb-5 tracking-tight group-hover:text-yellow-300 transition duration-500">
-                Elite Training
-              </h3>
-
-              {/* Description */}
-              <p className="leading-8 text-[15px] text-gray-400 group-hover:text-gray-300 transition duration-500">
-                Advanced coaching sessions crafted to improve tactical
-                awareness, positional understanding, opening preparation,
-                and competitive confidence.
-              </p>
-
-              {/* Button */}
-              <div className="mt-10 inline-flex items-center gap-3 text-yellow-300 font-semibold tracking-wide">
-                Learn More
-                <span className="group-hover:translate-x-2 transition duration-500">
-                  →
-                </span>
-              </div>
-
-              {/* Bottom Line */}
-              <div
-                className={`absolute bottom-0 left-0 h-[4px] bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-full transition-all duration-700 ${activeCard === 0 ? "w-full" : "w-0 group-hover:w-full"
-                  }`}
-              />
-            </div>
-          </div>
-
-          {/* CARD 2 */}
-          <div
-            onClick={() => setActiveCard(1)}
-            className={`group relative cursor-pointer transition-all duration-700 hover:-translate-y-5 ${activeCard === 1 ? "scale-[1.03]" : ""
-              }`}
-          >
-
-            {/* Gradient Border */}
-            <div
-              className={`absolute inset-0 rounded-[34px] p-[1.5px] transition-all duration-700 ${activeCard === 1
-                  ? "bg-gradient-to-br from-yellow-300 via-yellow-500 to-yellow-600 shadow-[0_0_60px_rgba(234,179,8,0.35)]"
-                  : "bg-black/10 group-hover:bg-gradient-to-br group-hover:from-yellow-300/70 group-hover:to-yellow-500/70"
-                }`}
-            />
-
-            {/* Main Card */}
-            <div className="relative h-full rounded-[34px] bg-white p-10 overflow-hidden border border-black/5">
-
-              {/* Shine Effect */}
-              <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-0 -left-[120%] h-full w-[80%] bg-gradient-to-r from-transparent via-black/10 to-transparent skew-x-[-25deg] group-hover:left-[140%] transition-all duration-1000" />
-              </div>
-
-              {/* Glow */}
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-yellow-400/10 rounded-full blur-3xl group-hover:scale-150 transition duration-700" />
-
-              {/* Floating Dots */}
-              <div className="absolute top-6 right-6 w-3 h-3 bg-yellow-400 rounded-full animate-ping" />
-              <div className="absolute bottom-8 left-8 w-2 h-2 bg-yellow-300 rounded-full animate-pulse" />
-
-              {/* Icon */}
-              <div className="relative w-24 h-24 rounded-[28px] bg-yellow-50 border border-yellow-200 flex items-center justify-center text-5xl text-yellow-500 mb-10 shadow-[0_0_35px_rgba(250,204,21,0.18)] group-hover:rotate-12 group-hover:scale-110 transition-all duration-700">
-
-                {/* Rotating Border */}
-                <div className="absolute inset-0 rounded-[28px] border border-yellow-300/40 animate-spin [animation-duration:8s]" />
-
-                ♞
-              </div>
-
-              {/* Title */}
-              <h3 className="text-3xl font-black text-slate-900 mb-5 tracking-tight group-hover:text-yellow-500 transition duration-500">
-                Expert Coaches
-              </h3>
-
-              {/* Description */}
-              <p className="leading-8 text-[15px] text-slate-600 group-hover:text-slate-700 transition duration-500">
-                Learn from passionate mentors focused on strategy,
-                discipline, analytical thinking, and developing a
-                champion mindset.
-              </p>
-
-              {/* Button */}
-              <div className="mt-10 inline-flex items-center gap-3 text-yellow-500 font-semibold tracking-wide">
-                Meet Coaches
-                <span className="group-hover:translate-x-2 transition duration-500">
-                  →
-                </span>
-              </div>
-
-              {/* Bottom Line */}
-              <div
-                className={`absolute bottom-0 left-0 h-[4px] bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-full transition-all duration-700 ${activeCard === 1 ? "w-full" : "w-0 group-hover:w-full"
-                  }`}
-              />
-            </div>
-          </div>
-
-          {/* CARD 3 */}
-          <div
-            onClick={() => setActiveCard(2)}
-            className={`group relative cursor-pointer transition-all duration-700 hover:-translate-y-5 ${activeCard === 2 ? "scale-[1.03]" : ""
-              }`}
-          >
-
-            {/* Gradient Border */}
-            <div
-              className={`absolute inset-0 rounded-[34px] p-[1.5px] transition-all duration-700 ${activeCard === 2
-                  ? "bg-gradient-to-br from-yellow-300 via-yellow-500 to-yellow-600 shadow-[0_0_60px_rgba(234,179,8,0.35)]"
-                  : "bg-black/10 group-hover:bg-gradient-to-br group-hover:from-yellow-300/70 group-hover:to-yellow-500/70"
-                }`}
-            />
-
-            {/* Main Card */}
-            <div className="relative h-full rounded-[34px] bg-black p-10 overflow-hidden">
-
-              {/* Shine Effect */}
-              <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-0 -left-[120%] h-full w-[80%] bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-25deg] group-hover:left-[140%] transition-all duration-1000" />
-              </div>
-
-              {/* Glow */}
-              <div className="absolute top-1/2 left-1/2 w-72 h-72 -translate-x-1/2 -translate-y-1/2 bg-yellow-400/10 rounded-full blur-3xl group-hover:scale-150 transition duration-700" />
-
-              {/* Floating Dots */}
-              <div className="absolute top-6 right-6 w-3 h-3 bg-yellow-300 rounded-full animate-ping" />
-              <div className="absolute bottom-8 left-8 w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
-
-              {/* Icon */}
-              <div className="relative w-24 h-24 rounded-[28px] bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center text-5xl text-yellow-300 mb-10 shadow-[0_0_40px_rgba(250,204,21,0.2)] group-hover:rotate-12 group-hover:scale-110 transition-all duration-700">
-
-                {/* Rotating Border */}
-                <div className="absolute inset-0 rounded-[28px] border border-yellow-400/30 animate-spin [animation-duration:8s]" />
-
-                ♚
-              </div>
-
-              {/* Title */}
-              <h3 className="text-3xl font-black text-white mb-5 tracking-tight group-hover:text-yellow-300 transition duration-500">
-                Proven Results
-              </h3>
-
-              {/* Description */}
-              <p className="leading-8 text-[15px] text-gray-400 group-hover:text-gray-300 transition duration-500">
-                Structured training programs with personalized guidance,
-                performance analysis, and strategic improvement plans
-                designed to unlock maximum potential.
-              </p>
-
-              {/* Button */}
-              <div className="mt-10 inline-flex items-center gap-3 text-yellow-300 font-semibold tracking-wide">
-                View Results
-                <span className="group-hover:translate-x-2 transition duration-500">
-                  →
-                </span>
-              </div>
-
-              {/* Bottom Line */}
-              <div
-                className={`absolute bottom-0 left-0 h-[4px] bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-full transition-all duration-700 ${activeCard === 2 ? "w-full" : "w-0 group-hover:w-full"
-                  }`}
-              />
-            </div>
-          </div>
-
+        {/* Shine Effect */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 -left-[120%] h-full w-[80%] bg-gradient-to-r from-transparent via-black/10 to-transparent skew-x-[-25deg] group-hover:left-[140%] transition-all duration-1000" />
         </div>
-      </section>
+
+        {/* Glow */}
+        <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-yellow-400/10 rounded-full blur-3xl group-hover:scale-150 transition duration-700" />
+
+        {/* Floating Dots */}
+        <div className="absolute top-6 right-6 w-3 h-3 bg-yellow-400 rounded-full animate-ping" />
+        <div className="absolute bottom-8 left-8 w-2 h-2 bg-yellow-300 rounded-full animate-pulse" />
+
+        {/* Icon */}
+        <div className="relative w-24 h-24 rounded-[28px] bg-yellow-50 border border-yellow-200 flex items-center justify-center text-5xl text-yellow-500 mb-10 shadow-[0_0_35px_rgba(250,204,21,0.18)] group-hover:rotate-12 group-hover:scale-110 transition-all duration-700">
+
+          {/* Rotating Border */}
+          <div className="absolute inset-0 rounded-[28px] border border-yellow-300/40 animate-spin [animation-duration:8s]" />
+
+          ♞
+        </div>
+
+        {/* Title */}
+        <h3 className="text-3xl font-black text-slate-900 mb-5 tracking-tight group-hover:text-yellow-500 transition duration-500">
+          Expert Coaches
+        </h3>
+
+        {/* Description */}
+        <p className="leading-8 text-[15px] text-slate-600 group-hover:text-slate-700 transition duration-500">
+          Learn from passionate mentors focused on strategy,
+          discipline, analytical thinking, and developing a
+          champion mindset.
+        </p>
+
+        {/* Button */}
+        <div className="mt-10 inline-flex items-center gap-3 text-yellow-500 font-semibold tracking-wide">
+          Meet Coaches
+          <span className="group-hover:translate-x-2 transition duration-500">
+            →
+          </span>
+        </div>
+
+        {/* Bottom Line */}
+        <div
+          className={`absolute bottom-0 left-0 h-[4px] bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-full transition-all duration-700 ${
+            activeCard === 1 ? "w-full" : "w-0 group-hover:w-full"
+          }`}
+        />
+      </div>
+    </div>
+
+    {/* CARD 3 */}
+    <div
+      onClick={() => setActiveCard(2)}
+      className={`group relative cursor-pointer transition-all duration-700 hover:-translate-y-5 ${
+        activeCard === 2 ? "scale-[1.03]" : ""
+      }`}
+    >
+
+      {/* Gradient Border */}
+      <div
+        className={`absolute inset-0 rounded-[34px] p-[1.5px] transition-all duration-700 ${
+          activeCard === 2
+            ? "bg-gradient-to-br from-yellow-300 via-yellow-500 to-yellow-600 shadow-[0_0_60px_rgba(234,179,8,0.35)]"
+            : "bg-white/15 group-hover:bg-gradient-to-br group-hover:from-yellow-300/70 group-hover:to-yellow-500/70"
+        }`}
+      />
+
+      {/* Main Card */}
+      <div className="relative h-full rounded-[34px] bg-black border border-white/15 p-10 overflow-hidden">
+
+        {/* Shine Effect */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 -left-[120%] h-full w-[80%] bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-25deg] group-hover:left-[140%] transition-all duration-1000" />
+        </div>
+
+        {/* Glow */}
+        <div className="absolute top-1/2 left-1/2 w-72 h-72 -translate-x-1/2 -translate-y-1/2 bg-yellow-400/10 rounded-full blur-3xl group-hover:scale-150 transition duration-700" />
+
+        {/* Floating Dots */}
+        <div className="absolute top-6 right-6 w-3 h-3 bg-yellow-300 rounded-full animate-ping" />
+        <div className="absolute bottom-8 left-8 w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
+
+        {/* Icon */}
+        <div className="relative w-24 h-24 rounded-[28px] bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center text-5xl text-yellow-300 mb-10 shadow-[0_0_40px_rgba(250,204,21,0.2)] group-hover:rotate-12 group-hover:scale-110 transition-all duration-700">
+
+          {/* Rotating Border */}
+          <div className="absolute inset-0 rounded-[28px] border border-yellow-400/30 animate-spin [animation-duration:8s]" />
+
+          ♚
+        </div>
+
+        {/* Title */}
+        <h3 className="text-3xl font-black text-white mb-5 tracking-tight group-hover:text-yellow-300 transition duration-500">
+          Proven Results
+        </h3>
+
+        {/* Description */}
+        <p className="leading-8 text-[15px] text-gray-400 group-hover:text-gray-300 transition duration-500">
+          Structured training programs with personalized guidance,
+          performance analysis, and strategic improvement plans
+          designed to unlock maximum potential.
+        </p>
+
+        {/* Button */}
+        <div className="mt-10 inline-flex items-center gap-3 text-yellow-300 font-semibold tracking-wide">
+          View Results
+          <span className="group-hover:translate-x-2 transition duration-500">
+            →
+          </span>
+        </div>
+
+        {/* Bottom Line */}
+        <div
+          className={`absolute bottom-0 left-0 h-[4px] bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-full transition-all duration-700 ${
+            activeCard === 2 ? "w-full" : "w-0 group-hover:w-full"
+          }`}
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
     </div>
   );
 };
