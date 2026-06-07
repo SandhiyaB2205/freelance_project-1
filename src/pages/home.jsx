@@ -29,6 +29,45 @@ const rollingCards = [
 
 const Home = () => {
   const [activeCard, setActiveCard] = useState(1);
+  const [formData, setFormData] = useState({
+    name: "",
+    education: "",
+    phone: "",
+    email: "",
+    place: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState({ type: "", text: "" });
+
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage({ type: "", text: "" });
+
+    try {
+      const response = await fetch("http://localhost:5000/api/book-demo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      });
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitMessage({ type: "success", text: "Demo booked successfully! We will contact you soon." });
+        setFormData({ name: "", education: "", phone: "", email: "", place: "" });
+      } else {
+        setSubmitMessage({ type: "error", text: data.error || "Something went wrong. Please try again." });
+      }
+    } catch (error) {
+      setSubmitMessage({ type: "error", text: "Failed to connect to the server. Please check your connection." });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveCard((prev) => (prev + 1) % 3);
@@ -993,6 +1032,147 @@ const Home = () => {
 
         </div>
       </section>
+
+      {/* ================= Book Demo Form Section ================= */}
+      <section className="relative w-full bg-[#fdfbf0] py-32 px-6 md:px-12 lg:px-20 overflow-hidden">
+        
+        {/* Soft Background Blend */}
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-yellow-200/20 blur-3xl rounded-full -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-yellow-300/20 blur-3xl rounded-full translate-x-1/3 translate-y-1/3" />
+
+        {/* Soft Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-yellow-50/30" />
+
+        <div className="relative max-w-4xl mx-auto z-10">
+          
+          <div className="text-center mb-16">
+            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-yellow-300 bg-yellow-100 text-yellow-700 text-xs tracking-[4px] uppercase font-bold shadow-sm">
+              Take the First Step
+            </span>
+            <h2 className="mt-8 text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight">
+              Book a <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-600">Free Demo</span>
+            </h2>
+            <p className="mt-6 text-slate-600 text-lg md:text-xl max-w-2xl mx-auto">
+              Fill out the form below to schedule a demo session and experience premium chess coaching firsthand.
+            </p>
+          </div>
+
+          {/* Form Container Wrapper with Gold Animated Border */}
+          <div className="gold-animated-border p-[3px] rounded-[34px] shadow-[0_25px_80px_rgba(202,138,4,0.18)] relative overflow-hidden">
+            <style>
+              {`
+                @keyframes goldShine {
+                  0% { background-position: 0% 50%; }
+                  50% { background-position: 100% 50%; }
+                  100% { background-position: 0% 50%; }
+                }
+                .gold-animated-border {
+                  background: linear-gradient(270deg, #fef08a, #facc15, #ca8a04, #eab308, #fef08a);
+                  background-size: 400% 400%;
+                  animation: goldShine 8s ease infinite;
+                }
+              `}
+            </style>
+            
+            {/* Form Container */}
+            <div className="bg-white rounded-[32px] p-8 md:p-12 relative overflow-hidden">
+            
+            {/* Form Glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent pointer-events-none" />
+
+            <form onSubmit={handleFormSubmit} className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+              
+              {/* Full Name */}
+              <div className="md:col-span-2">
+                <label className="block text-sm font-semibold text-slate-700 mb-2 uppercase tracking-wide">Full Name *</label>
+                <input 
+                  type="text" 
+                  name="name" 
+                  value={formData.name} 
+                  onChange={handleInputChange}
+                  required 
+                  placeholder="e.g. Magnus Carlsen"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all duration-300"
+                />
+              </div>
+
+              {/* Phone Number */}
+              <div>
+                <label className="block text-sm font-semibold text-slate-700 mb-2 uppercase tracking-wide">Phone Number *</label>
+                <input 
+                  type="tel" 
+                  name="phone" 
+                  value={formData.phone} 
+                  onChange={handleInputChange}
+                  required 
+                  placeholder="e.g. +91 9876543210"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all duration-300"
+                />
+              </div>
+
+              {/* Email */}
+              <div>
+                <label className="block text-sm font-semibold text-slate-700 mb-2 uppercase tracking-wide">Email Address</label>
+                <input 
+                  type="email" 
+                  name="email" 
+                  value={formData.email} 
+                  onChange={handleInputChange}
+                  placeholder="e.g. magnus@chess.com"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all duration-300"
+                />
+              </div>
+
+              {/* Education */}
+              <div>
+                <label className="block text-sm font-semibold text-slate-700 mb-2 uppercase tracking-wide">Education / Grade</label>
+                <input 
+                  type="text" 
+                  name="education" 
+                  value={formData.education} 
+                  onChange={handleInputChange}
+                  placeholder="e.g. 10th Grade, College"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all duration-300"
+                />
+              </div>
+
+              {/* Place */}
+              <div>
+                <label className="block text-sm font-semibold text-slate-700 mb-2 uppercase tracking-wide">City / Place</label>
+                <input 
+                  type="text" 
+                  name="place" 
+                  value={formData.place} 
+                  onChange={handleInputChange}
+                  placeholder="e.g. Chennai"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all duration-300"
+                />
+              </div>
+
+              {/* Submit Message */}
+              {submitMessage.text && (
+                <div className={`md:col-span-2 p-4 rounded-xl text-center font-medium ${submitMessage.type === 'success' ? 'bg-green-500/10 text-green-700 border border-green-500/20' : 'bg-red-500/10 text-red-700 border border-red-500/20'}`}>
+                  {submitMessage.text}
+                </div>
+              )}
+
+              {/* Submit Button */}
+              <div className="md:col-span-2 mt-4 text-center">
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full md:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-black text-lg px-12 py-5 rounded-full hover:scale-105 hover:shadow-[0_10px_40px_rgba(250,204,21,0.4)] transition-all duration-300 disabled:opacity-70 disabled:hover:scale-100 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? "Submitting..." : "Request Free Demo"}
+                </button>
+              </div>
+
+            </form>
+          </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };
